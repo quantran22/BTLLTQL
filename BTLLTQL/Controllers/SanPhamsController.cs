@@ -10,13 +10,11 @@ using BTLLTQL.Models;
 
 namespace BTLLTQL.Controllers
 {
-
     public class SanPhamsController : Controller
     {
         private DBContext db = new DBContext();
 
         // GET: SanPhams
-        
         public ActionResult Index()
         {
             return View(db.SanPhams.ToList());
@@ -36,7 +34,7 @@ namespace BTLLTQL.Controllers
             }
             return View(sanPham);
         }
-        [Authorize(Roles = "Admin")]
+
         // GET: SanPhams/Create
         public ActionResult Create()
         {
@@ -48,7 +46,7 @@ namespace BTLLTQL.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaSanPham,MaLoaiSanPham,MaNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,TinhTrang")] SanPham sanPham)
+        public ActionResult Create([Bind(Include = "MaSanPham,TenLoaiSanPham,TenNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,TinhTrang")] SanPham sanPham)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +57,7 @@ namespace BTLLTQL.Controllers
 
             return View(sanPham);
         }
-        [Authorize(Roles = "Admin")]
+
         // GET: SanPhams/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -80,7 +78,7 @@ namespace BTLLTQL.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaSanPham,MaLoaiSanPham,MaNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,TinhTrang")] SanPham sanPham)
+        public ActionResult Edit([Bind(Include = "MaSanPham,TenLoaiSanPham,TenNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,TinhTrang")] SanPham sanPham)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +90,6 @@ namespace BTLLTQL.Controllers
         }
 
         // GET: SanPhams/Delete/5
-        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

@@ -15,5 +15,6 @@ namespace BTLLTQL.Models
 
         [StringLength(50)]
         public string TenNhaSanXuat { get; set; }
+        public ICollection<SanPham> sanPhams { get; set; }
     }
 }

@@ -13,10 +13,12 @@ namespace BTLLTQL.Models
         public int MaSanPham { get; set; }
 
         [StringLength(10)]
-        public string MaLoaiSanPham { get; set; }
+        public string TenLoaiSanPham { get; set; }
+        public LoaiSanPham LoaiSanPham { get; set; }
 
         [StringLength(10)]
-        public string MaNhaSanXuat { get; set; }
+        public string TenNhaSanXuat { get; set; }
+        public NhaSanXuat NhaSanXuat { get; set; }
 
         public string TenSanPham { get; set; }
 
