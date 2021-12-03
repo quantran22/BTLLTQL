@@ -4,8 +4,8 @@
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
 @section scripts{
+    @*<script src="https://cdn.ckeditor.com/ckeditor5/31.0.0/classic/ckeditor.js"></script>*@
     <script>
         $('#btnSelectImage').on('click', function (e) {
             e.preventDefault();
@@ -15,11 +15,8 @@
             };
             finder.popup();
         })
-
     </script>
-
 }
-
 
 <h2>Create</h2>
 
@@ -58,15 +55,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CauHinh, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CauHinh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.CauHinh, new { @class = "ckeditor" })
                 @Html.ValidationMessageFor(model => model.CauHinh, "", new { @class = "text-danger" })
+
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.HinhChinh, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.HinhChinh, new { htmlAttributes = new { @class = "form-control", @id = "txtImage" }, id = "txtImage" })
+                @Html.EditorFor(model => model.HinhChinh, new { htmlAttributes = new { @class = "form-control", @id = "txtImage" }, id = "txtImage" })
                 <a id="btnSelectImage" href="#">Chọn ảnh</a>
                 @Html.ValidationMessageFor(model => model.HinhChinh, "", new { @class = "text-danger" })
             </div>

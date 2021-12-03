@@ -17,19 +17,18 @@ namespace BTLLTQL.Models
         public virtual DbSet<NhaSanXuat> NhaSanXuats { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<Khachhang> Khachhangs { get; set; }
-        
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<HangHoa> HangHoas { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<SanPham>()
-                .Property(e => e.CauHinh)
+            modelBuilder.Entity<Account>()
+                .Property(e => e.Password)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SanPham>()
-                .Property(e => e.TinhTrang)
-                .IsFixedLength();
         }
 
-        public System.Data.Entity.DbSet<BTLLTQL.Models.Role> Roles { get; set; }
+        
     }
 }

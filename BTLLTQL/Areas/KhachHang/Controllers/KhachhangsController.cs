@@ -10,7 +10,6 @@ using BTLLTQL.Models;
 
 namespace BTLLTQL.Areas.KhachHang.Controllers
 {
-    [Authorize(Roles = "Admin")]
     [Authorize(Roles = "KH")]
     public class KhachhangsController : Controller
     {

@@ -5,6 +5,7 @@ namespace BTLLTQL.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("SanPham")]
     public partial class SanPham
@@ -21,7 +22,7 @@ namespace BTLLTQL.Models
         public NhaSanXuat NhaSanXuat { get; set; }
 
         public string TenSanPham { get; set; }
-
+        [AllowHtml]
         [Column(TypeName = "text")]
         public string CauHinh { get; set; }
 
