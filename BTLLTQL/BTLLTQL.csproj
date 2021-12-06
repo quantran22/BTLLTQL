@@ -225,9 +225,25 @@
     <Compile Include="Migrations\202112020145128_create_table_KhachHang.Designer.cs">
       <DependentUpon>202112020145128_create_table_KhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112030107531_create_table_SanPham.cs" />
-    <Compile Include="Migrations\202112030107531_create_table_SanPham.Designer.cs">
-      <DependentUpon>202112030107531_create_table_SanPham.cs</DependentUpon>
+    <Compile Include="Migrations\202112031431149_create_table_LoaiSanPham.cs" />
+    <Compile Include="Migrations\202112031431149_create_table_LoaiSanPham.Designer.cs">
+      <DependentUpon>202112031431149_create_table_LoaiSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112031433170_create_table_SanPham.cs" />
+    <Compile Include="Migrations\202112031433170_create_table_SanPham.Designer.cs">
+      <DependentUpon>202112031433170_create_table_SanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112041009472_create_table_Role.cs" />
+    <Compile Include="Migrations\202112041009472_create_table_Role.Designer.cs">
+      <DependentUpon>202112041009472_create_table_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112041016000_create_table_SanPham1.cs" />
+    <Compile Include="Migrations\202112041016000_create_table_SanPham1.Designer.cs">
+      <DependentUpon>202112041016000_create_table_SanPham1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112050750556_create_table_SanPham2.cs" />
+    <Compile Include="Migrations\202112050750556_create_table_SanPham2.Designer.cs">
+      <DependentUpon>202112050750556_create_table_SanPham2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -270,26 +286,6 @@
     <Content Include="Areas\Admin\Views\Khachhangs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Khachhangs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Khachhangs\Index.cshtml" />
-    <Content Include="Areas\KhachHang\Views\SanPhams\Create.cshtml" />
-    <Content Include="Areas\KhachHang\Views\SanPhams\Delete.cshtml" />
-    <Content Include="Areas\KhachHang\Views\SanPhams\Details.cshtml" />
-    <Content Include="Areas\KhachHang\Views\SanPhams\Edit.cshtml" />
-    <Content Include="Areas\KhachHang\Views\SanPhams\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPhams\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\LoaiSanPhams\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\LoaiSanPhams\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\LoaiSanPhams\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\LoaiSanPhams\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\LoaiSanPhams\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\NhaSanXuats\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\NhaSanXuats\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\NhaSanXuats\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\NhaSanXuats\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\NhaSanXuats\Index.cshtml" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />
     <Content Include="Scripts\ckeditor\CHANGES.html" />
     <Content Include="Scripts\ckeditor\ckeditor.asp" />
@@ -300,6 +296,26 @@
     <Content Include="Areas\KhachHang\Views\Khachhangs\Details.cshtml" />
     <Content Include="Areas\KhachHang\Views\Khachhangs\Edit.cshtml" />
     <Content Include="Areas\KhachHang\Views\Khachhangs\Index.cshtml" />
+    <Content Include="Areas\KhachHang\Views\SanPhams\Create.cshtml" />
+    <Content Include="Areas\KhachHang\Views\SanPhams\Delete.cshtml" />
+    <Content Include="Areas\KhachHang\Views\SanPhams\Details.cshtml" />
+    <Content Include="Areas\KhachHang\Views\SanPhams\Edit.cshtml" />
+    <Content Include="Areas\KhachHang\Views\SanPhams\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiSanPhams\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiSanPhams\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiSanPhams\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiSanPhams\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiSanPhams\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuats\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuats\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuats\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuats\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NhaSanXuats\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SanPhams\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -1334,8 +1350,20 @@
     <EmbeddedResource Include="Migrations\202112020145128_create_table_KhachHang.resx">
       <DependentUpon>202112020145128_create_table_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112030107531_create_table_SanPham.resx">
-      <DependentUpon>202112030107531_create_table_SanPham.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112031431149_create_table_LoaiSanPham.resx">
+      <DependentUpon>202112031431149_create_table_LoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112031433170_create_table_SanPham.resx">
+      <DependentUpon>202112031433170_create_table_SanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112041009472_create_table_Role.resx">
+      <DependentUpon>202112041009472_create_table_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112041016000_create_table_SanPham1.resx">
+      <DependentUpon>202112041016000_create_table_SanPham1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112050750556_create_table_SanPham2.resx">
+      <DependentUpon>202112050750556_create_table_SanPham2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

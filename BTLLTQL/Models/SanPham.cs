@@ -1,4 +1,4 @@
-namespace BTLLTQL.Models
+﻿namespace BTLLTQL.Models
 {
     using System;
     using System.Collections.Generic;
@@ -13,16 +13,14 @@ namespace BTLLTQL.Models
         [Key]
         public int MaSanPham { get; set; }
 
-        [StringLength(10)]
         public string TenLoaiSanPham { get; set; }
         public LoaiSanPham LoaiSanPham { get; set; }
 
-        [StringLength(10)]
         public string TenNhaSanXuat { get; set; }
         public NhaSanXuat NhaSanXuat { get; set; }
 
         public string TenSanPham { get; set; }
-        [AllowHtml]
+        
         [Column(TypeName = "text")]
         public string CauHinh { get; set; }
 
@@ -33,7 +31,7 @@ namespace BTLLTQL.Models
 
         public int? SoLuongBan { get; set; }
 
-        [StringLength(10)]
-        public string TinhTrang { get; set; }
+        [AllowHtml]
+        public string GioiThieu { get; set; }
     }
 }

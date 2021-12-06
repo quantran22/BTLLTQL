@@ -18,7 +18,7 @@ namespace BTLLTQL.Models
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<Khachhang> Khachhangs { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<HangHoa> HangHoas { get; set; }
+        
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

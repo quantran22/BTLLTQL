@@ -1,4 +1,4 @@
-namespace BTLLTQL.Models
+﻿namespace BTLLTQL.Models
 {
     using System;
     using System.Collections.Generic;
@@ -9,12 +9,12 @@ namespace BTLLTQL.Models
     [Table("LoaiSanPham")]
     public partial class LoaiSanPham
     {
-        [Key]
+        
         [StringLength(10)]
         public string MaLoaiSanPham { get; set; }
-
-        [StringLength(50)]
+        [Key]
         public string TenLoaiSanPham { get; set; }
-        public ICollection<HangHoa> HangHoas { get; set; }
+
+        public ICollection<SanPham> SanPhams { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Areas/KhachHang/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
@@ -13,10 +13,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TenLoaiSanPham)
+            @Html.DisplayNameFor(model => model.LoaiSanPham.MaLoaiSanPham)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TenNhaSanXuat)
+            @Html.DisplayNameFor(model => model.NhaSanXuat.MaNhaSanXuat)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TenSanPham)
@@ -34,7 +34,7 @@
             @Html.DisplayNameFor(model => model.SoLuongBan)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TinhTrang)
+            @Html.DisplayNameFor(model => model.GioiThieu)
         </th>
         <th></th>
     </tr>
@@ -42,10 +42,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.TenLoaiSanPham)
+            @Html.DisplayFor(modelItem => item.LoaiSanPham.MaLoaiSanPham)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TenNhaSanXuat)
+            @Html.DisplayFor(modelItem => item.NhaSanXuat.MaNhaSanXuat)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TenSanPham)
@@ -63,7 +63,7 @@
             @Html.DisplayFor(modelItem => item.SoLuongBan)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TinhTrang)
+            @Html.DisplayFor(modelItem => item.GioiThieu)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MaSanPham }) |

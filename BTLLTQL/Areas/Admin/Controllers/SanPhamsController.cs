@@ -17,7 +17,8 @@ namespace BTLLTQL.Areas.Admin.Controllers
         // GET: Admin/SanPhams
         public ActionResult Index()
         {
-            return View(db.SanPhams.ToList());
+            var sanPhams = db.SanPhams.Include(s => s.LoaiSanPham).Include(s => s.NhaSanXuat);
+            return View(sanPhams.ToList());
         }
 
         // GET: Admin/SanPhams/Details/5
@@ -38,6 +39,8 @@ namespace BTLLTQL.Areas.Admin.Controllers
         // GET: Admin/SanPhams/Create
         public ActionResult Create()
         {
+            ViewBag.TenLoaiSanPham = new SelectList(db.LoaiSanPhams, "TenLoaiSanPham", "MaLoaiSanPham");
+            ViewBag.TenNhaSanXuat = new SelectList(db.NhaSanXuats, "TenNhaSanXuat", "MaNhaSanXuat");
             return View();
         }
 
@@ -46,7 +49,7 @@ namespace BTLLTQL.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaSanPham,TenLoaiSanPham,TenNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,TinhTrang")] SanPham sanPham)
+        public ActionResult Create([Bind(Include = "MaSanPham,TenLoaiSanPham,TenNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,GioiThieu")] SanPham sanPham)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +58,8 @@ namespace BTLLTQL.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.TenLoaiSanPham = new SelectList(db.LoaiSanPhams, "TenLoaiSanPham", "MaLoaiSanPham", sanPham.TenLoaiSanPham);
+            ViewBag.TenNhaSanXuat = new SelectList(db.NhaSanXuats, "TenNhaSanXuat", "MaNhaSanXuat", sanPham.TenNhaSanXuat);
             return View(sanPham);
         }
 
@@ -70,6 +75,8 @@ namespace BTLLTQL.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.TenLoaiSanPham = new SelectList(db.LoaiSanPhams, "TenLoaiSanPham", "MaLoaiSanPham", sanPham.TenLoaiSanPham);
+            ViewBag.TenNhaSanXuat = new SelectList(db.NhaSanXuats, "TenNhaSanXuat", "MaNhaSanXuat", sanPham.TenNhaSanXuat);
             return View(sanPham);
         }
 
@@ -86,6 +93,8 @@ namespace BTLLTQL.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.TenLoaiSanPham = new SelectList(db.LoaiSanPhams, "TenLoaiSanPham", "MaLoaiSanPham", sanPham.TenLoaiSanPham);
+            ViewBag.TenNhaSanXuat = new SelectList(db.NhaSanXuats, "TenNhaSanXuat", "MaNhaSanXuat", sanPham.TenNhaSanXuat);
             return View(sanPham);
         }
 

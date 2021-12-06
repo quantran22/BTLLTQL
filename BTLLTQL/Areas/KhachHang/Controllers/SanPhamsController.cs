@@ -10,20 +10,18 @@ using BTLLTQL.Models;
 
 namespace BTLLTQL.Areas.KhachHang.Controllers
 {
-    
     public class SanPhamsController : Controller
     {
         private DBContext db = new DBContext();
 
         // GET: KhachHang/SanPhams
-        
         public ActionResult Index()
         {
-            return View(db.SanPhams.ToList());
+            var sanPhams = db.SanPhams.Include(s => s.LoaiSanPham).Include(s => s.NhaSanXuat);
+            return View(sanPhams.ToList());
         }
 
         // GET: KhachHang/SanPhams/Details/5
-        
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,9 +37,10 @@ namespace BTLLTQL.Areas.KhachHang.Controllers
         }
 
         // GET: KhachHang/SanPhams/Create
-        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
+            ViewBag.TenLoaiSanPham = new SelectList(db.LoaiSanPhams, "TenLoaiSanPham", "MaLoaiSanPham");
+            ViewBag.TenNhaSanXuat = new SelectList(db.NhaSanXuats, "TenNhaSanXuat", "MaNhaSanXuat");
             return View();
         }
 
@@ -50,7 +49,7 @@ namespace BTLLTQL.Areas.KhachHang.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaSanPham,MaLoaiSanPham,MaNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,TinhTrang")] SanPham sanPham)
+        public ActionResult Create([Bind(Include = "MaSanPham,TenLoaiSanPham,TenNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,TinhTrang")] SanPham sanPham)
         {
             if (ModelState.IsValid)
             {
@@ -59,11 +58,12 @@ namespace BTLLTQL.Areas.KhachHang.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.TenLoaiSanPham = new SelectList(db.LoaiSanPhams, "TenLoaiSanPham", "MaLoaiSanPham", sanPham.TenLoaiSanPham);
+            ViewBag.TenNhaSanXuat = new SelectList(db.NhaSanXuats, "TenNhaSanXuat", "MaNhaSanXuat", sanPham.TenNhaSanXuat);
             return View(sanPham);
         }
 
         // GET: KhachHang/SanPhams/Edit/5
-        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -75,6 +75,8 @@ namespace BTLLTQL.Areas.KhachHang.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.TenLoaiSanPham = new SelectList(db.LoaiSanPhams, "TenLoaiSanPham", "MaLoaiSanPham", sanPham.TenLoaiSanPham);
+            ViewBag.TenNhaSanXuat = new SelectList(db.NhaSanXuats, "TenNhaSanXuat", "MaNhaSanXuat", sanPham.TenNhaSanXuat);
             return View(sanPham);
         }
 
@@ -83,7 +85,7 @@ namespace BTLLTQL.Areas.KhachHang.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaSanPham,MaLoaiSanPham,MaNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,TinhTrang")] SanPham sanPham)
+        public ActionResult Edit([Bind(Include = "MaSanPham,TenLoaiSanPham,TenNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,GioiThieu")] SanPham sanPham)
         {
             if (ModelState.IsValid)
             {
@@ -91,11 +93,12 @@ namespace BTLLTQL.Areas.KhachHang.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.TenLoaiSanPham = new SelectList(db.LoaiSanPhams, "TenLoaiSanPham", "MaLoaiSanPham", sanPham.TenLoaiSanPham);
+            ViewBag.TenNhaSanXuat = new SelectList(db.NhaSanXuats, "TenNhaSanXuat", "MaNhaSanXuat", sanPham.TenNhaSanXuat);
             return View(sanPham);
         }
 
         // GET: KhachHang/SanPhams/Delete/5
-        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

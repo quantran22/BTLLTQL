@@ -29,17 +29,17 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.TenLoaiSanPham, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TenLoaiSanPham, "TenLoaiSanPham", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TenLoaiSanPham, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("TenLoaiSanPham", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TenLoaiSanPham, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TenNhaSanXuat, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TenNhaSanXuat, "TenNhaSanXuat", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TenNhaSanXuat, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("TenNhaSanXuat", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TenNhaSanXuat, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -55,17 +55,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CauHinh, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.CauHinh, new { @class = "ckeditor" })
+                @Html.EditorFor(model => model.HinhChinh, new { htmlAttributes = new { @class = "form-control", @id = "txtImage" }, id = "txtImage" })
+                <a id="btnSelectImage" href="#">Chèn ảnh</a>
                 @Html.ValidationMessageFor(model => model.CauHinh, "", new { @class = "text-danger" })
-
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.HinhChinh, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.HinhChinh, new { htmlAttributes = new { @class = "form-control", @id = "txtImage" }, id = "txtImage" })
-                <a id="btnSelectImage" href="#">Chọn ảnh</a>
+                @Html.EditorFor(model => model.HinhChinh, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.HinhChinh, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -87,10 +86,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TinhTrang, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.GioiThieu, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TinhTrang, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TinhTrang, "", new { @class = "text-danger" })
+                @Html.TextAreaFor(model => model.GioiThieu, new { @class = "ckeditor" })
+                @Html.ValidationMessageFor(model => model.GioiThieu, "", new { @class = "text-danger" })
             </div>
         </div>
 

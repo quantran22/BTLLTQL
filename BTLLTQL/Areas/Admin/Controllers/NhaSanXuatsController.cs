@@ -46,7 +46,7 @@ namespace BTLLTQL.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaNhaSanXuat,TenNhaSanXuat")] NhaSanXuat nhaSanXuat)
+        public ActionResult Create([Bind(Include = "TenNhaSanXuat,MaNhaSanXuat")] NhaSanXuat nhaSanXuat)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace BTLLTQL.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaNhaSanXuat,TenNhaSanXuat")] NhaSanXuat nhaSanXuat)
+        public ActionResult Edit([Bind(Include = "TenNhaSanXuat,MaNhaSanXuat")] NhaSanXuat nhaSanXuat)
         {
             if (ModelState.IsValid)
             {
