@@ -49,7 +49,7 @@ namespace BTLLTQL.Areas.KhachHang.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaSanPham,TenLoaiSanPham,TenNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,TinhTrang")] SanPham sanPham)
+        public ActionResult Create([Bind(Include = "MaSanPham,TenLoaiSanPham,TenNhaSanXuat,TenSanPham,CauHinh,HinhChinh,Gia,SoLuongBan,GioiThieu")] SanPham sanPham)
         {
             if (ModelState.IsValid)
             {

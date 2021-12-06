@@ -20,7 +20,7 @@
         public NhaSanXuat NhaSanXuat { get; set; }
 
         public string TenSanPham { get; set; }
-        
+
         [Column(TypeName = "text")]
         public string CauHinh { get; set; }
 

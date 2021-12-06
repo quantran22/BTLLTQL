@@ -7,13 +7,13 @@ namespace BTLLTQL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class create_table_Role : IMigrationMetadata
+    public sealed partial class createtable_SanPham : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(create_table_Role));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(createtable_SanPham));
         
         string IMigrationMetadata.Id
         {
-            get { return "202112041009472_create_table_Role"; }
+            get { return "202112061501312_create-table_SanPham"; }
         }
         
         string IMigrationMetadata.Source

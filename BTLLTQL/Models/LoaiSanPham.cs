@@ -9,8 +9,7 @@
     [Table("LoaiSanPham")]
     public partial class LoaiSanPham
     {
-        
-        [StringLength(10)]
+
         public string MaLoaiSanPham { get; set; }
         [Key]
         public string TenLoaiSanPham { get; set; }

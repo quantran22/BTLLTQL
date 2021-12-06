@@ -3,7 +3,7 @@ namespace BTLLTQL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class create_table_SanPham1 : DbMigration
+    public partial class createtable_SanPham : DbMigration
     {
         public override void Up()
         {
@@ -12,7 +12,7 @@ namespace BTLLTQL.Migrations
                 c => new
                     {
                         TenLoaiSanPham = c.String(nullable: false, maxLength: 128),
-                        MaLoaiSanPham = c.String(maxLength: 10),
+                        MaLoaiSanPham = c.String(),
                     })
                 .PrimaryKey(t => t.TenLoaiSanPham);
             
@@ -28,7 +28,7 @@ namespace BTLLTQL.Migrations
                         HinhChinh = c.String(maxLength: 50),
                         Gia = c.Int(),
                         SoLuongBan = c.Int(),
-                        TinhTrang = c.String(maxLength: 10),
+                        GioiThieu = c.String(),
                     })
                 .PrimaryKey(t => t.MaSanPham)
                 .ForeignKey("dbo.LoaiSanPham", t => t.TenLoaiSanPham)
@@ -41,7 +41,7 @@ namespace BTLLTQL.Migrations
                 c => new
                     {
                         TenNhaSanXuat = c.String(nullable: false, maxLength: 128),
-                        MaNhaSanXuat = c.String(maxLength: 10),
+                        MaNhaSanXuat = c.String(),
                     })
                 .PrimaryKey(t => t.TenNhaSanXuat);
             

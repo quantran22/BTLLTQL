@@ -9,11 +9,12 @@
     [Table("NhaSanXuat")]
     public partial class NhaSanXuat
     {
+       
         
-        [StringLength(10)]
         public string MaNhaSanXuat { get; set; }
         [Key]
         public string TenNhaSanXuat { get; set; }
+
         public ICollection<SanPham> sanPhams { get; set; }
     }
 }
