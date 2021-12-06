@@ -249,6 +249,7 @@
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\DBContext.cs" />
     <Compile Include="Models\Encrytion.cs" />
+    <Compile Include="Models\Excel.cs" />
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\LoaiSanPham.cs" />
     <Compile Include="Models\NhaSanXuat.cs" />
