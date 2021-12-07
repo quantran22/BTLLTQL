@@ -13,10 +13,10 @@
         [Key]
         public int MaSanPham { get; set; }
 
-        public string TenLoaiSanPham { get; set; }
+        public string MaLoaiSanPham { get; set; }
         public LoaiSanPham LoaiSanPham { get; set; }
 
-        public string TenNhaSanXuat { get; set; }
+        public string MaNhaSanXuat { get; set; }
         public NhaSanXuat NhaSanXuat { get; set; }
 
         public string TenSanPham { get; set; }
