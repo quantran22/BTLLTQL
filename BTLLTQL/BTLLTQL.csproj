@@ -284,7 +284,6 @@
     <Content Include="Areas\KhachHang\Views\Khachhangs\Details.cshtml" />
     <Content Include="Areas\KhachHang\Views\Khachhangs\Edit.cshtml" />
     <Content Include="Areas\KhachHang\Views\Khachhangs\Index.cshtml" />
-    <Content Include="Areas\KhachHang\Views\SanPhams\Details.cshtml" />
     <Content Include="Areas\KhachHang\Views\SanPhams\Index.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiSanPhams\Create.cshtml" />
     <Content Include="Areas\Admin\Views\LoaiSanPhams\Delete.cshtml" />
