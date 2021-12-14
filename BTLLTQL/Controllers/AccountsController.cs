@@ -24,13 +24,20 @@ namespace BTLLTQL.Controllers
         [AllowAnonymous]
         public ActionResult Register(Account acc)
         {
-            if (ModelState.IsValid)
+            try
             {
-                //Mã Hóa mật khẩu trước khi cho vào database
-                acc.Password = ecy.PasswordEncrytion(acc.Password);
-                DB.Accounts.Add(acc);
-                DB.SaveChanges();
-                return RedirectToAction("Login", "Accounts");
+                if (ModelState.IsValid)
+                {
+                    //Mã Hóa mật khẩu trước khi cho vào database
+                    acc.Password = ecy.PasswordEncrytion(acc.Password);
+                    DB.Accounts.Add(acc);
+                    DB.SaveChanges();
+                    return RedirectToAction("Login", "Accounts");
+                }
+            }
+            catch
+            {
+                ModelState.AddModelError("", "tên đăng nhập đã tồn tại");
             }
             return View(acc);
         }

@@ -33,5 +33,6 @@
 
         [AllowHtml]
         public string GioiThieu { get; set; }
+        public ICollection<DanhGia> DanhGias { get; set; }
     }
 }

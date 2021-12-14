@@ -211,29 +211,48 @@
     <Compile Include="Areas\Admin\Controllers\LoaiSanPhamsController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhaSanXuatsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SanPhamsController.cs" />
+    <Compile Include="Areas\KhachHang\Controllers\DanhGiasController.cs" />
     <Compile Include="Areas\KhachHang\Controllers\HomeKHController.cs" />
     <Compile Include="Areas\KhachHang\Controllers\KhachhangsController.cs" />
     <Compile Include="Areas\KhachHang\Controllers\SanPhamsController.cs" />
     <Compile Include="Areas\KhachHang\KhachHangAreaRegistration.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoaiSanPhamsController.cs" />
-    <Compile Include="Controllers\NhaSanXuatsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
-    <Compile Include="Controllers\SanPhamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112070849493_create_table_SanPham.cs" />
-    <Compile Include="Migrations\202112070849493_create_table_SanPham.Designer.cs">
-      <DependentUpon>202112070849493_create_table_SanPham.cs</DependentUpon>
+    <Compile Include="Migrations\202112091352205_table_table_SanPham.cs" />
+    <Compile Include="Migrations\202112091352205_table_table_SanPham.Designer.cs">
+      <DependentUpon>202112091352205_table_table_SanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112070933438_create_table_LoaiSanPham.cs" />
-    <Compile Include="Migrations\202112070933438_create_table_LoaiSanPham.Designer.cs">
-      <DependentUpon>202112070933438_create_table_LoaiSanPham.cs</DependentUpon>
+    <Compile Include="Migrations\202112091358032_create_Table_DanhGia.cs" />
+    <Compile Include="Migrations\202112091358032_create_Table_DanhGia.Designer.cs">
+      <DependentUpon>202112091358032_create_Table_DanhGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112091414412_create_table_KhachHang.cs" />
+    <Compile Include="Migrations\202112091414412_create_table_KhachHang.Designer.cs">
+      <DependentUpon>202112091414412_create_table_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112091415450_Create_table_DG.cs" />
+    <Compile Include="Migrations\202112091415450_Create_table_DG.Designer.cs">
+      <DependentUpon>202112091415450_Create_table_DG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112091419017_create_table_update.cs" />
+    <Compile Include="Migrations\202112091419017_create_table_update.Designer.cs">
+      <DependentUpon>202112091419017_create_table_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112091426488_create_table_Up.cs" />
+    <Compile Include="Migrations\202112091426488_create_table_Up.Designer.cs">
+      <DependentUpon>202112091426488_create_table_Up.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112131442394_all.cs" />
+    <Compile Include="Migrations\202112131442394_all.Designer.cs">
+      <DependentUpon>202112131442394_all.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\DanhGia.cs" />
     <Compile Include="Models\DBContext.cs" />
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\Excel.cs" />
@@ -300,6 +319,11 @@
     <Content Include="Areas\Admin\Views\SanPhams\Details.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\SanPhams\Index.cshtml" />
+    <Content Include="Areas\KhachHang\Views\SanPhams\Details.cshtml" />
+    <Content Include="Areas\KhachHang\Views\DanhGias\Create.cshtml" />
+    <Content Include="Areas\KhachHang\Views\DanhGias\Delete.cshtml" />
+    <Content Include="Areas\KhachHang\Views\DanhGias\Edit.cshtml" />
+    <Content Include="Areas\KhachHang\Views\DanhGias\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -1331,11 +1355,26 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202112070849493_create_table_SanPham.resx">
-      <DependentUpon>202112070849493_create_table_SanPham.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112091352205_table_table_SanPham.resx">
+      <DependentUpon>202112091352205_table_table_SanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112070933438_create_table_LoaiSanPham.resx">
-      <DependentUpon>202112070933438_create_table_LoaiSanPham.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112091358032_create_Table_DanhGia.resx">
+      <DependentUpon>202112091358032_create_Table_DanhGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112091414412_create_table_KhachHang.resx">
+      <DependentUpon>202112091414412_create_table_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112091415450_Create_table_DG.resx">
+      <DependentUpon>202112091415450_Create_table_DG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112091419017_create_table_update.resx">
+      <DependentUpon>202112091419017_create_table_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112091426488_create_table_Up.resx">
+      <DependentUpon>202112091426488_create_table_Up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112131442394_all.resx">
+      <DependentUpon>202112131442394_all.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

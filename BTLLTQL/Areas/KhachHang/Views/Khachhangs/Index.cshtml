@@ -5,10 +5,10 @@
     Layout = "~/Areas/KhachHang/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Khách Hàng</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm mới", "Create")
 </p>
 <table class="table">
     <tr>
@@ -23,9 +23,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Diachi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hinh1)
         </th>
         <th></th>
     </tr>
@@ -45,12 +42,9 @@
             @Html.DisplayFor(modelItem => item.Diachi)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Hinh1)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaKH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaKH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaKH })
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaKH }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.MaKH }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaKH })
         </td>
     </tr>
 }

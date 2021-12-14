@@ -5,10 +5,10 @@
     Layout = "~/Areas/KhachHang/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết</h2>
 
 <div>
-    <h4>Khachhang</h4>
+    <h4>Khách Hàng</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -42,18 +42,9 @@
         <dd>
             @Html.DisplayFor(model => model.Diachi)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Hinh1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Hinh1)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaKH }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaKH }) |
+    @Html.ActionLink("Trở lại", "Index")
 </p>

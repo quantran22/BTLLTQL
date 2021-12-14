@@ -18,6 +18,7 @@ namespace BTLLTQL.Models
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<Khachhang> Khachhangs { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<DanhGia> DanhGias { get; set; }
         
 
 
@@ -28,7 +29,5 @@ namespace BTLLTQL.Models
                 .IsUnicode(false);
 
         }
-
-        
     }
 }

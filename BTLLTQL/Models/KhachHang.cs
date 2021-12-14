@@ -25,5 +25,7 @@
 
         [StringLength(50)]
         public string Hinh1 { get; set; }
+
+        public ICollection<DanhGia> DanhGias { get; set; }
     }
 }

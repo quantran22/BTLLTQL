@@ -1,0 +1,67 @@
+﻿@model BTLLTQL.Models.SanPham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/KhachHang/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết Sản Phẩm</h2>
+
+<div>
+    <h4>Sản Phẩm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSanPham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSanPham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CauHinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CauHinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhChinh)
+        </dt>
+
+        <dd>
+            <img src="@Model.HinhChinh" alt=" " />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongBan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongBan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GioiThieu)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.GioiThieu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Trở lại", "Index")
+</p>

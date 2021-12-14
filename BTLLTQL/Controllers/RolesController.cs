@@ -10,7 +10,7 @@ using BTLLTQL.Models;
 
 namespace BTLLTQL.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "ADMIN")]
     public class RolesController : Controller
     {
         private DBContext db = new DBContext();

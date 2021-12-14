@@ -34,7 +34,6 @@ namespace BTLLTQL.Areas.Admin.Controllers
             }
             return View(loaiSanPham);
         }
-
         // GET: Admin/LoaiSanPhams/Create
         public ActionResult Create()
         {
@@ -48,15 +47,24 @@ namespace BTLLTQL.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaLoaiSanPham,TenLoaiSanPham")] LoaiSanPham loaiSanPham)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.LoaiSanPhams.Add(loaiSanPham);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                if (ModelState.IsValid)
+                {
+                    db.LoaiSanPhams.Add(loaiSanPham);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
 
+               
+            }
+            catch
+            {
+                ModelState.AddModelError("", "Mã loại Sản phẩm đã tồn tại");
+            }
             return View(loaiSanPham);
         }
+           
 
         // GET: Admin/LoaiSanPhams/Edit/5
         public ActionResult Edit(string id)

@@ -8,7 +8,8 @@ namespace BTLLTQL.Areas.Admin.Controllers
 {
     public class HomeAdminController : Controller
     {
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "ADMIN")]
+
         // GET: Admin/HomeAdmin
         public ActionResult Index()
         {

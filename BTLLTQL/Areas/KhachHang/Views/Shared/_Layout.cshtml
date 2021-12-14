@@ -16,14 +16,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Trang Chủ  | ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Danh Sach", "Index", "SanPhams", new { area = "KhachHang" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Thêm thông tin khách hàng", "Index", "KhachHangs", new { area = "KhachHang" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Logout", "Logout", "Accounts", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Register", "Register", "Accounts", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Danh Sách |", "Index", "SanPhams", new { area = "KhachHang" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Thêm thông tin khách hàng |", "Index", "KhachHangs", new { area = "KhachHang" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Đánh Giá Sản Phẩm |", "Index", "DanhGias", new { area = "KhachHang" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Đăng Xuất |", "Logout", "Accounts", new { area = "" }, new { @class = "navbar-brand" })</li>
                 </ul>
             </div>
         </div>
@@ -32,11 +32,12 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        
+
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
 </body>
 </html>

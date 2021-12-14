@@ -5,27 +5,12 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết Sản Phẩm</h2>
 
 <div>
-    <h4>SanPham</h4>
+    <h4>Sản Phẩm</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.LoaiSanPham.TenLoaiSanPham)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoaiSanPham.TenLoaiSanPham)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NhaSanXuat.TenNhaSanXuat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NhaSanXuat.TenNhaSanXuat)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.TenSanPham)
@@ -72,12 +57,12 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.GioiThieu)
+            @Html.Raw(Model.GioiThieu)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaSanPham }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = Model.MaSanPham }) |
+    @Html.ActionLink("Trở về", "Index")
 </p>

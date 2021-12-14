@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BTLLTQL.Models.DanhGia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/KhachHang/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Đánh Giá của khách hàng</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.khachhang.TenKhachHang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SanPham.TenSanPham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngay_Gio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sđt)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.khachhang.TenKhachHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanPham.TenSanPham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngay_Gio)
+        </td>
+        <td>
+            @Html.Raw(item.NoiDung)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sđt)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaDanhGia }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaDanhGia })
+        </td>
+    </tr>
+}
+
+</table>

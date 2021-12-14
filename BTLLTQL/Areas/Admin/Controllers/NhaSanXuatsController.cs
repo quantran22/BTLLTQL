@@ -48,11 +48,20 @@ namespace BTLLTQL.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaNhaSanXuat,TenNhaSanXuat")] NhaSanXuat nhaSanXuat)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.NhaSanXuats.Add(nhaSanXuat);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.NhaSanXuats.Add(nhaSanXuat);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+
+            }
+            catch
+            {
+                ModelState.AddModelError("","Mã nhà sản xuất đã tồn tại");
             }
 
             return View(nhaSanXuat);
